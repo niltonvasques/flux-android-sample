@@ -2,8 +2,11 @@ package br.com.catbag.gifreduxsample;
 
 import android.app.Application;
 
+
 import com.umaplay.fluxxan.Fluxxan;
 
+import br.com.catbag.gifreduxsample.middlewares.Analytics;
+import br.com.catbag.gifreduxsample.middlewares.Logger;
 import br.com.catbag.gifreduxsample.models.AppState;
 import br.com.catbag.gifreduxsample.models.ImmutableAppState;
 import br.com.catbag.gifreduxsample.reducers.AppStateReducer;
@@ -26,6 +29,8 @@ public class MyApp extends Application {
         AppState state = ImmutableAppState.builder().build();
         sFluxxan = new Fluxxan(state);
         sFluxxan.registerReducer(new AppStateReducer());
+        sFluxxan.getDispatcher().registerMiddleware(new Logger());
+        sFluxxan.getDispatcher().registerMiddleware(new Analytics());
         sFluxxan.start();
     }
 
