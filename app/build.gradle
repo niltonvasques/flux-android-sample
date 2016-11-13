@@ -63,7 +63,7 @@ dependencies {
     //App dependencies
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
-    compile 'com.github.niltonvasques:Fluxxan:da59ced3ec'
+    compile 'com.github.niltonvasques:Fluxxan:v1.1.0'
     compile 'org.immutables:value:2.3.5'
     compile 'com.google.guava:guava:19.0'
     compile 'co.trikita:anvil-sdk15:0.4.0'
