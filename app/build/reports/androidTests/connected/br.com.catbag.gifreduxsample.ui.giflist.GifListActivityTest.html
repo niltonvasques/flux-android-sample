@@ -22,19 +22,19 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">10</div>
+<div class="counter">2</div>
 <p>tests</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">0</div>
+<div class="counter">2</div>
 <p>failures</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">15.804s</div>
+<div class="counter">1.008s</div>
 <p>duration</p>
 </div>
 </td>
@@ -43,8 +43,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox success" id="successRate">
-<div class="percent">100%</div>
+<div class="infoBox failures" id="successRate">
+<div class="percent">0%</div>
 <p>successful</p>
 </div>
 </td>
@@ -54,10 +54,88 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Tests</a>
+<a href="#tab0">Failed tests</a>
+</li>
+<li>
+<a href="#tab1">Tests</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="whenGifIsNotWatchedTest"></a>
+<h3 class="failures">whenGifIsNotWatchedTest</h3>
+<span class="code">
+<pre>java.lang.RuntimeException: No view found for ID 2131492949
+at trikita.anvil.BaseDSL.withId(BaseDSL.java:692)
+at br.com.catbag.gifreduxsample.ui.components.GifComponent.lambda$view$2(GifComponent.java:77)
+at br.com.catbag.gifreduxsample.ui.components.GifComponent$$Lambda$1.view(Unknown Source)
+at trikita.anvil.BaseDSL.xml(BaseDSL.java:676)
+at br.com.catbag.gifreduxsample.ui.components.GifComponent.view(GifComponent.java:75)
+at trikita.anvil.Anvil$Mount.render(Anvil.java:204)
+at trikita.anvil.Anvil.render(Anvil.java:173)
+at trikita.anvil.Anvil.render(Anvil.java:104)
+at br.com.catbag.gifreduxsample.ui.GifListActivity.lambda$onStateChanged$0(GifListActivity.java:48)
+at br.com.catbag.gifreduxsample.ui.GifListActivity$$Lambda$1.run(Unknown Source)
+at android.os.Handler.handleCallback(Handler.java:751)
+at android.os.Handler.dispatchMessage(Handler.java:95)
+at android.os.Looper.loop(Looper.java:154)
+at android.app.ActivityThread.main(ActivityThread.java:6077)
+at java.lang.reflect.Method.invoke(Native Method)
+at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:865)
+at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:755)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="whenScrollDownAndPlayLastItemTest"></a>
+<h3 class="failures">whenScrollDownAndPlayLastItemTest</h3>
+<span class="code">
+<pre>android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with gif image view playing' doesn't match the selected view.
+Expected: with gif image view playing
+Got: &quot;GifImageView{id=4, visibility=VISIBLE, width=960, height=960, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=true, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, root-is-layout-requested=false, has-input-connection=false, x=12.0, y=0.0}&quot;
+
+at dalvik.system.VMStack.getThreadStackTrace(Native Method)
+at java.lang.Thread.getStackTrace(Thread.java:1566)
+at android.support.test.espresso.base.DefaultFailureHandler.getUserFriendlyError(DefaultFailureHandler.java:92)
+at android.support.test.espresso.base.DefaultFailureHandler.handle(DefaultFailureHandler.java:56)
+at android.support.test.espresso.ViewInteraction.runSynchronouslyOnUiThread(ViewInteraction.java:184)
+at android.support.test.espresso.ViewInteraction.check(ViewInteraction.java:158)
+at br.com.catbag.gifreduxsample.ui.giflist.GifListActivityTest.whenScrollDownAndPlayLastItemTest(GifListActivityTest.java:247)
+at java.lang.reflect.Method.invoke(Native Method)
+at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+at android.support.test.internal.statement.UiThreadStatement.evaluate(UiThreadStatement.java:55)
+at android.support.test.rule.ActivityTestRule$ActivityStatement.evaluate(ActivityTestRule.java:270)
+at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:298)
+at org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call(FailOnTimeout.java:292)
+at java.util.concurrent.FutureTask.run(FutureTask.java:237)
+at java.lang.Thread.run(Thread.java:761)
+Caused by: junit.framework.AssertionFailedError: 'with gif image view playing' doesn't match the selected view.
+Expected: with gif image view playing
+Got: &quot;GifImageView{id=4, visibility=VISIBLE, width=960, height=960, has-focus=false, has-focusable=false, has-window-focus=true, is-clickable=true, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, root-is-layout-requested=false, has-input-connection=false, x=12.0, y=0.0}&quot;
+
+at android.support.test.espresso.matcher.ViewMatchers.assertThat(ViewMatchers.java:1053)
+at android.support.test.espresso.assertion.ViewAssertions$2.check(ViewAssertions.java:89)
+at android.support.test.espresso.ViewInteraction$2.run(ViewInteraction.java:170)
+at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:428)
+at java.util.concurrent.FutureTask.run(FutureTask.java:237)
+at android.os.Handler.handleCallback(Handler.java:751)
+at android.os.Handler.dispatchMessage(Handler.java:95)
+at android.os.Looper.loop(Looper.java:154)
+at android.app.ActivityThread.main(ActivityThread.java:6077)
+at java.lang.reflect.Method.invoke(Native Method)
+at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:865)
+at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:755)
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -67,51 +145,19 @@
 </tr>
 </thead>
 <tr>
-<td>whenGifDownloadFailTest</td>
-<td class="success">passed (0.580s)</td>
-</tr>
-<tr>
-<td>whenGifIsDownloadedTest</td>
-<td class="success">passed (0.504s)</td>
-</tr>
-<tr>
-<td>whenGifIsDownloadingTest</td>
-<td class="success">passed (0.453s)</td>
-</tr>
-<tr>
 <td>whenGifIsNotWatchedTest</td>
-<td class="success">passed (10.061s)</td>
-</tr>
-<tr>
-<td>whenGifIsWatchedTest</td>
-<td class="success">passed (0.403s)</td>
-</tr>
-<tr>
-<td>whenLoadMultipleGifsOnAppStateTest</td>
-<td class="success">passed (0.580s)</td>
-</tr>
-<tr>
-<td>whenPauseGifTest</td>
-<td class="success">passed (0.706s)</td>
-</tr>
-<tr>
-<td>whenPlayGifTest</td>
-<td class="success">passed (0.681s)</td>
+<td class="failures">failed (0.026s)</td>
 </tr>
 <tr>
 <td>whenScrollDownAndPlayLastItemTest</td>
-<td class="success">passed (1.005s)</td>
-</tr>
-<tr>
-<td>whenScrollUpAndPlayFirstItemTest</td>
-<td class="success">passed (0.831s)</td>
+<td class="failures">failed (0.982s)</td>
 </tr>
 </table>
 </div>
 </div>
 <div id="footer">
 <p>Generated by 
-<a href="http://www.gradle.org">Gradle 2.14.1</a> at Nov 13, 2016 10:21:03 AM</p>
+<a href="http://www.gradle.org">Gradle 2.14.1</a> at Nov 13, 2016 11:13:55 AM</p>
 </div>
 </div>
 </body>
