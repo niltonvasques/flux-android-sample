@@ -1,3 +1,2 @@
-include ':app', ':fluxxan'
-project(':fluxxan').projectDir = new File('fluxxan/fluxxan')
+include ':app'
 
